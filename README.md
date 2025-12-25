@@ -1,7 +1,7 @@
 # Customer Management Dashboard
 
 A responsive customer management dashboard built with HTML, SCSS, and JavaScript.
-
+🔗https://nilantoashik.github.io/UI-Customer-Management/
 ## Features
 
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
@@ -121,5 +121,6 @@ Animations use CSS custom properties for delays:
 ```
 
 ## License
+
 
 MIT License
