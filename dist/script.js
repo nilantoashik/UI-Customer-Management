@@ -11,6 +11,31 @@ const interval = setInterval(() => {
   }
 }, 42);
 
+// Update time display
+function updateTime() {
+  const now = new Date();
+  let hours = now.getHours();
+  const minutes = now.getMinutes();
+  const ampm = hours >= 12 ? 'pm' : 'am';
+  
+  // Convert to 12-hour format
+  hours = hours % 12;
+  hours = hours ? hours : 12; // 0 should be 12
+  
+  // Format minutes with leading zero
+  const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+  
+  const timeString = `${hours}.${minutesStr} ${ampm}`;
+  const timeElement = document.getElementById('current-time');
+  if (timeElement) {
+    timeElement.textContent = timeString;
+  }
+}
+
+// Update time immediately and then every second
+updateTime();
+setInterval(updateTime, 1000);
+
 // Navigation functionality
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.header-link');
