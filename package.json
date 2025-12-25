@@ -1,0 +1,24 @@
+{
+  "name": "customer-management",
+  "version": "1.0.0",
+  "description": "Customer Management Dashboard",
+  "main": "dist/index.html",
+  "scripts": {
+    "build": "sass src/style.scss dist/style.css --style=compressed && npm run copy",
+    "watch:css": "sass --watch src/style.scss dist/style.css",
+    "watch:assets": "chokidar src/index.html src/script.js -c \"npm run copy\"",
+    "dev": "concurrently \"npm run watch:css\" \"npm run watch:assets\"",
+    "copy": "copyfiles -u 1 src/index.html src/script.js dist",
+    "start": "npm run build && start dist/index.html",
+    "serve": "npx http-server dist -p 3000 -o"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "copyfiles": "^2.4.1",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.0.0"
+  },
+  "keywords": ["dashboard", "customer-management", "ui"],
+  "author": "",
+  "license": "MIT"
+}
